@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "laravel-elixir": "*"
+  },
+  "dependencies": {
+    "gulp-coffee": "^2.3.4",
+    "gulp-concat": "^2.6.1",
+    "gulp-util": "^3.0.8"
+  }
+}
