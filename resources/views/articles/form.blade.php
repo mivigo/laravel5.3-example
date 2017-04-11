@@ -30,6 +30,34 @@
         $('#tag_list').select2({
             placeholder: 'Chose a tag',
             tags: true
+//            ajax: {
+//                dataType: 'json',
+//                url: 'tags.json',
+//                processResults: function (data) {
+//                    return {results: data}
+//                }
+//            }
+
+//            ////////////////////////////////
+//            ajax: {
+//                dataType: 'json',
+//                url: 'api/tags',
+//                dellay: 250,
+//                data: function (params) {
+//                    return {
+//                        q: params.term
+//
+//                    }
+//                },
+//                prosessResults: function (data) {
+//                    return { results: data }
+//                }
+//            }
+//            data: [
+//                {id: 'one', text: 'One'},
+//                {id: 'two', text: 'Two'},
+//            ]
+//            /////////////////////////////////
         });
     </script>
 @endsection

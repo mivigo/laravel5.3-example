@@ -5,6 +5,9 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property mixed tags
+ */
 class Article extends Model
 {
     protected $fillable = [
@@ -60,7 +63,9 @@ class Article extends Model
      *
      * @return array
      */
-    public function getListAttribute() {
-        return $this->tags->lists('id');
+    public function getTagListAttribute() {
+        return $this->tags->pluck('id')->all();
+//        return $this->tags->pluck('id')->toArray(); //the same
+        
     }
 }

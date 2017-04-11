@@ -51,13 +51,14 @@ class ArticlesController extends Controller
     }
 
     public function store (ArticleRequest $request) {
+//        dd($request->input('tag_list'));
 //            public function store (ArticleRequest $request) {
 //        $input['published_at'] = Carbon::now();
 //        Article::create(Request::all());
 //        Article::create($request->all());
 //        $article = new Article($request->all());
 
-
+        $article = Auth::user()->articles()->create($request->all());
         $this->createArticle($request);
 ////        Auth::user()->articles;     //Collection
 ////        Auth::user()->articles();   //Object
@@ -72,6 +73,7 @@ class ArticlesController extends Controller
 //        \Flash::success();
 //        \Flash::errors();
 
+        $article->tags()->attach($request->input('tag_list'));
             flash()->success('Your article has been created')
 //            flash()->overlay('Your article has been created');
                 ->important();
