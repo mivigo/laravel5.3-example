@@ -28,8 +28,8 @@ class ArticlesController extends Controller
 //        return Auth::user();
 
         $articles = Article::latest('published_at')->published()->get();
-
-        return view('articles.index', compact('articles'));
+//        $latest = Article::latest()->first();
+        return view('articles.index', compact('articles', 'latest'));
     }
 
     public function show (Article $article) {
@@ -74,9 +74,9 @@ class ArticlesController extends Controller
 //        \Flash::errors();
 
         $article->tags()->attach($request->input('tag_list'));
-            flash()->success('Your article has been created')
+            flash()->success('Your article has been created');
+//                ->important();
 //            flash()->overlay('Your article has been created');
-                ->important();
 
 //        if ($request->all()) {
 //            $request->session()->flash('message.level', 'success');

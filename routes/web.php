@@ -11,10 +11,15 @@
 |
 */
 
+Route::get('bar', function (Bar $bar) {
+   dd($bar);
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('tags/{tag}', 'TagsController@show');
 //Route::get('/', function() {
 //    return 'Home Page';
 //});
