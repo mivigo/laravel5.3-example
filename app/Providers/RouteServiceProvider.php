@@ -32,11 +32,11 @@ class RouteServiceProvider extends ServiceProvider
             return Article::published()->findOrFail($id);
         });
 
-        Route::bind('tags', function($name) {
+        Route::bind('tag', function($name) {
             return Tag::where('name', $name)->firstOrFail();
         });
 
-        Route::model('tags', 'App\Tag');
+//        Route::model('tags', 'App\Tag');
 //        $router->bind() // Fot using logic with $id
 //        Route::model('articles', 'App\Article');
     }
